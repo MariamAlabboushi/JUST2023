@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Female data in Titanic</title>
+</head>
+<style>
+    body {
+    font-family: 'Indie Flower', cursive;
+    background: linear-gradient(to bottom, #2c3e50, #ffffff);
+    }
+    h1 {
+	  color: White;
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+    }
+    #vizContainer {
+      width: 1000px;
+      height: 800px;
+	  margin: 0 auto;
+
+    }
+	.card {
+	  background-color: #f8f9fa;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 30px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+    .card-title {
+	  color: #4E79A7;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .card-text {
+	 color: #4E79A7;
+     padding: 24px;
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+  </style>
+<body onload="initViz();">
+	<h1>A Look at Female Data in the Titanic</h1>
+	<div id="vizContainer"></div>
+  <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    function initViz() {
+      var containerDiv = document.getElementById("vizContainer"),
+        url = "https://public.tableau.com/views/BreakingGenderStereotypesWomenPaidMoreThanMenforTitanicTickets/DSSProject1-Titanic?:language=en-US&:display_count=n&:origin=viz_share_link",
+        options = {
+          hideTabs: true,
+          onFirstInteractive: function () {
+            console.log("Run this code when the viz has finished loading.");
+          }
+        };
+      
+      var viz = new tableau.Viz(containerDiv, url, options);
+    }
+    
+    document.addEventListener('DOMContentLoaded', initViz);
+  </script>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Conclusion</h5>
+      <p class="card-text">This visualization is based on the Titanic dataset available on Kaggle, which contains information about passengers on board the Titanic ship.
+      <br> Our analysis focused on female data and we discovered interesting insights into the demographics and survival rates of women on the ship.
+      <br> Overall, this project was completed by Mariam Alabboushi, Shaimaa Ali, and Saba Amjad, as part of a Decision Support Systems and Intelligent Systems course.</p>
+    </div>
+  </div>
+</body>
+</html>
